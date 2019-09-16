@@ -56,20 +56,3 @@ plt.show()
 
 print("Numbers of iterations :", count)
 
-# import numpy as np
-# import matplotlib
-# matplotlib.use('TkAgg')
-# import matplotlib.pyplot as plt
-
-# X=np.linspace(0,100,num=1000)
-# Y=X**2-X
-
-# ranges = [[0, 50], [50, 100]]
-
-# for r in ranges:
-#     cond = (X >= r[0]) & (X <= r[1])
-#     fig=plt.figure()
-#     plt.plot(X[cond],Y[cond])
-#     plt.xlim(r)
-
-# plt.show()
