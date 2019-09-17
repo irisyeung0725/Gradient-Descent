@@ -2,7 +2,6 @@ import numpy as np # support for large, multi-dimensional arrays and matrices
 import numpy.linalg as la  # Linear algebra
 import matplotlib.pyplot as plt # Useful plotting tool for data visualization
 from mpl_toolkits.mplot3d import axes3d # Plot the 3d graph
-from matplotlib.animation import FuncAnimation
 import matplotlib
 
 def f(x):
@@ -18,7 +17,6 @@ def df(x):
     return np.array([2*x[0] + x[1], x[0] + 6*x[1]])
 
 # Using axes3d to plot the 3d shape
-
 fig = plt.figure(1)
 ax = fig.gca(projection="3d")
 xmesh, ymesh = np.mgrid[-5:5:50j,-5:5:50j]
