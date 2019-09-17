@@ -12,7 +12,6 @@
 #                 Elasticity Constraint: 0.002o^2 - 0.35r + 0.04o <= 1
 #                 Hardness Constraint: 0.002r^2 + 0.005o^2 + 0.001c^2 + 0.001r*o + 0.10r + 0.06o - 0.3c <= 1
 
-import sys
 from gurobipy import *
 # print(sys.version)
 
