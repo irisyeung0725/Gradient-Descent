@@ -43,7 +43,6 @@ m.addConstr(0.002*r*r + 0.005*o*o + 0.001*c*c + 0.001*r*o + 0.10*r + 0.06*o - 0.
 m.optimize()
 
 for v in m.getVars():
-    print('%s %g' % (v.varName, v.x))
-    print(m.getVars())
+    print('%s %.2f' % (v.varName, v.x)) # rounded to 2 decimals
 
-print('Obj: %g' % obj.getValue())
+print('Obj: %.2f' % obj.getValue())
