@@ -1,6 +1,4 @@
-#!/usr/bin/env
-
-# Copyright 2018, Gurobi Optimization, LLC
+#!/usr/bin/python
 
 # This example formulates and solves the following QCP model:
 #     minimize    0.04*r + 0.01*o + 0.07*c
@@ -46,5 +44,6 @@ m.optimize()
 
 for v in m.getVars():
     print('%s %g' % (v.varName, v.x))
+    print(m.getVars())
 
 print('Obj: %g' % obj.getValue())
