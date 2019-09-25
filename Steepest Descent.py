@@ -56,7 +56,7 @@ while  (gnorm >= tol and (count <= maxiter and dx >= dxmin)) :
     guesses.append(next_guess)
     gnorm = la.norm(-g)
 
-    print("The current dot is :", x)
+    print("The current point is :", x)
     print("g =", g)
 
     # update termination metrics

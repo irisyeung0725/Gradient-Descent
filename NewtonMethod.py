@@ -76,14 +76,12 @@ while  (gnorm >= tol and (count <= maxiter and dx >= dxmin)):
     plt.xlabel("X1")
     plt.ylabel("X2")
     plt.title("f(x) = x1^2 + x1*x2 + 3*x2^2")
-    print("The current dot is :", cdot)
+    print("The current point is :", cdot)
     print("g =", g)
-
 
             
 print("Numbers of iterations:", count - 1)
 
-    
 
 plt.show(True)
 
