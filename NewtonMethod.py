@@ -3,6 +3,8 @@ from numpy.linalg import matrix_power # for handling matrices
 import matplotlib.pyplot as plt # Useful plotting tool for data visualization
 from mpl_toolkits.mplot3d import axes3d # Plot the 3d graph
 import matplotlib
+import numpy.linalg as la  # Linear algebra
+
 
 def f(x):
     '''
@@ -34,10 +36,16 @@ plt.show(False)
 
 
 guesses = [np.array([3, 3])] # starting point
+# termination tolerance
+tol = 1e-6
+# maximum number of allowed iterations
+maxiter = 1000;
+# minimum allowed perturbation
+dxmin = 1e-6 
+dx = float('Inf') # set dx as an infinit number
+gnorm = float('Inf') # set gnorm as an infinit number
 count = 0
-cont = True
-while cont:
-
+while  (gnorm >= tol and (count <= maxiter and dx >= dxmin)):
 #   define the Hessian of the function
     H = np.array([[2, 1], [1, 6]])
     # calculate H^-1
@@ -47,9 +55,16 @@ while cont:
     g =  np.matmul(h, df(x)) # g = H^-1 * g
     # set fixed step size
     t_opt = 1 # step size = 1
+    # take step and caculate the next dot
     next_guess = x - t_opt * g
     guesses.append(next_guess)
-    count += 1 # increase iteration    
+    gnorm = la.norm(-g)
+    
+    # update termination metrics
+    dx = la.norm(next_guess - x)    
+    count += 1 # increase iteration
+    
+    # count += 1 # increase iteration    
 #   Plot it
     plt.figure(3)
     plt.axis("equal")
@@ -61,15 +76,13 @@ while cont:
     plt.xlabel("X1")
     plt.ylabel("X2")
     plt.title("f(x) = x1^2 + x1*x2 + 3*x2^2")
-    # for loop stops when it reaches 0
-    for element in guesses[-1]:
-        if element == 0:
-            print("Numbers of iterations:", count)
-            cont = False
     print("The current dot is :", cdot)
+    print("g =", g)
+
 
             
-    
+print("Numbers of iterations:", count - 1)
+
     
 
 plt.show(True)
