@@ -39,7 +39,7 @@ guesses = [np.array([3, 3])] # starting point
 # termination tolerance
 tol = 1e-6
 # maximum number of allowed iterations
-maxiter = 1000;
+maxiter = 1000
 # minimum allowed perturbation
 dxmin = 1e-6 
 dx = float('Inf') # set dx as an infinit number
