@@ -63,8 +63,7 @@ while  (gnorm >= tol and (count <= maxiter and dx >= dxmin)):
     # update termination metrics
     dx = la.norm(next_guess - x)    
     count += 1 # increase iteration
-    
-    # count += 1 # increase iteration    
+      
 #   Plot it
     plt.figure(3)
     plt.axis("equal")
